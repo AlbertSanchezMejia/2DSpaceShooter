@@ -26,14 +26,14 @@ public class Player_Shoot : MonoBehaviour
     IEnumerator Co_ShootBullets()
     {
         _canShoot = false;
-        InstantiateBullets();
+        ShootBullets();
 
         yield return new WaitForSeconds(shootDelay);
 
         _canShoot = true;
     }
 
-    void InstantiateBullets()
+    void ShootBullets()
     {
         Rigidbody2D bulletInstance;
         bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation) as Rigidbody2D;

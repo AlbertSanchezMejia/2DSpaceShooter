@@ -28,12 +28,12 @@ public class Enemy_Shoot : MonoBehaviour
     {
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            InstantiateBullets(spawnPoints[i]);
+            ShootBullets(spawnPoints[i]);
         }
 
     }
 
-    void InstantiateBullets(Transform Point)
+    void ShootBullets(Transform Point)
     {
         Rigidbody2D bulletInstance;
         bulletInstance = Instantiate(bulletPrefab, Point.position, Point.rotation) as Rigidbody2D;

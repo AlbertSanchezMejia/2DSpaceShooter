@@ -5,11 +5,17 @@ using UnityEngine;
 public class Enemy_MoveDown : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
-    [SerializeField] Rigidbody2D rb;
+    Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>(); 
+    }
 
     void FixedUpdate()
     {
-        rb.MovePosition(transform.up * -1 * moveSpeed * Time.fixedDeltaTime);
+        Vector3 addedPosition = (-transform.up * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + addedPosition);
     }
 
 }

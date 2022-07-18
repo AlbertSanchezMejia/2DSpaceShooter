@@ -9,7 +9,6 @@ public class Enemy_Shoot : MonoBehaviour
     [SerializeField] float shootDelay = 0.5f;
     [SerializeField] Transform[] spawnPoints;
 
-
     void Start()
     {
         StartCoroutine(Co_spawnBullets());
@@ -30,7 +29,6 @@ public class Enemy_Shoot : MonoBehaviour
         {
             ShootBullets(spawnPoints[i]);
         }
-
     }
 
     void ShootBullets(Transform Point)

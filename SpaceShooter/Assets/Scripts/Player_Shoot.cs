@@ -7,7 +7,7 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] float bulletsSpeed = 10f;
     [SerializeField] float shootDelay = 0.5f;
     [SerializeField] Rigidbody2D bulletPrefab;
-    [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform[] spawnPoints;
     bool _canShoot;
 
     void Start()
@@ -26,14 +26,15 @@ public class Player_Shoot : MonoBehaviour
     IEnumerator Co_ShootBullets()
     {
         _canShoot = false;
-        ShootBullets();
+        ShootBullets(spawnPoints[0]);
+        ShootBullets(spawnPoints[1]);
 
         yield return new WaitForSeconds(shootDelay);
 
         _canShoot = true;
     }
 
-    void ShootBullets()
+    void ShootBullets(Transform spawnPoint)
     {
         Rigidbody2D bulletInstance;
         bulletInstance = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation) as Rigidbody2D;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4965684651418877189}
   - component: {fileID: 4965684651418877187}
   m_Layer: 0
-  m_Name: Enemy_MDown_1
+  m_Name: Enemy_Move_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4965684651418877185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
+  xHorizontal: 0
+  yVertical: 0
 --- !u!114 &4965684651418877188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLife: 3
+  explosionParticles: {fileID: 1098742597433204327, guid: 729f1fac3c7b1e74dbdc4b7d521f72ee, type: 3}
 --- !u!58 &4965684651418877184
 CircleCollider2D:
   m_ObjectHideFlags: 0

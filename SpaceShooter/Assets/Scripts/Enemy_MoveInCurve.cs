@@ -6,19 +6,28 @@ public class Enemy_MoveInCurve : MonoBehaviour
 {
     [SerializeField] float curveDistance = 2;
     [SerializeField] float curveSpeed = 0.5f;
-    float curveCenteX;
-
+    [SerializeField] bool isVertical;
+    float curveCenter;
     void Start()
     {
-        curveCenteX = transform.position.x;
+        if(isVertical) curveCenter = transform.position.x;
+        else curveCenter = transform.position.y;
     }
 
     void Update()
     {
         Vector2 pos = transform.position;
+        if (isVertical)
+        {
+            float curve = Mathf.Sin(pos.y * curveSpeed) * curveDistance;
+            pos.x = curveCenter + curve;
+        }
+        else
+        {
+            float curve = Mathf.Sin(pos.x * curveSpeed) * curveDistance;
+            pos.y = curveCenter + curve;
+        }
 
-        float curve = Mathf.Sin(pos.y * curveSpeed) * curveDistance;
-        pos.x = curveCenteX + curve;
 
         transform.position = pos;
     }

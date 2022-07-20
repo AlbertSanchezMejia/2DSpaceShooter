@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4965684651418877186}
   - component: {fileID: 4965684651418877191}
   - component: {fileID: 4965684651418877188}
+  - component: {fileID: 7549067104933563394}
   - component: {fileID: 4965684651418877184}
   - component: {fileID: 4965684651418877189}
   - component: {fileID: 4965684651418877187}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4965684651418877185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,8 +64,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f17477667b97d41888be3aa967e314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLife: 3
-  explosionParticles: {fileID: 1098742597433204327, guid: 729f1fac3c7b1e74dbdc4b7d521f72ee, type: 3}
+  enemyLife: 2
+  explosionParticles: {fileID: 6550230490369369147, guid: 58893d0f86b555244a418a75afe91d61, type: 3}
+--- !u!114 &7549067104933563394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4965684651418877185}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8dde51adeb2854a86600fd40cadf58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveDistance: 2
+  curveSpeed: 0.5
+  isVertical: 1
 --- !u!58 &4965684651418877184
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 2fe9b4018b8a21744b756d9be183cd0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

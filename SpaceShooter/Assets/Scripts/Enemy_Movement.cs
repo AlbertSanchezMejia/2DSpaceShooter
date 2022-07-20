@@ -19,7 +19,7 @@ public class Enemy_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 addedPosition = (movementAxis * moveSpeed * Time.fixedDeltaTime);
+        Vector3 addedPosition = (movementAxis.normalized * moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(transform.position + addedPosition);
     }
 
